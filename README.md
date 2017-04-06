@@ -13,7 +13,7 @@ ofxBundleResources::setup();
 Note that you also have to add a following line to Build Phases > Run Script.
 
 ```
-cp -r bin/data/ "$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/"
+rsync -a bin/data/ "$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/" --exclude "/.DS_Store" --exclude "/.gitkeep"
 ```
 
 ##License
